@@ -1,7 +1,7 @@
-import messages from "@/constants/messages";
-import { QueueItem, Server, servers } from "@/models/Server";
-import { SoundCloudService } from "@/services/soundcloud";
-import { Platform } from "@/types/Song";
+import messages from "../../constants/messages";
+import { QueueItem, Server, servers } from "../../models/Server";
+import { SoundCloudService } from "../../services/soundcloud";
+import { Platform } from "../../types/Song";
 import { entersState, joinVoiceChannel, VoiceConnectionStatus, DiscordGatewayAdapterCreator } from "@discordjs/voice";
 import { CommandInteraction, GuildMember } from "discord.js";
 import { createPlayMessage } from "../messages/playMessage";

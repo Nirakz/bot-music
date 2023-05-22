@@ -1,6 +1,6 @@
-import messages from "@/constants/messages";
-import { QueueItem } from "@/models/Server";
-import { formatSeconds } from "@/utils/formatTime";
+import messages from "../../constants/messages";
+import { QueueItem } from "../../models/Server";
+import { formatSeconds } from "../../utils/formatTime";
 import { MessageEmbed } from "discord.js";
 
 const MAX_SONGS_PER_PAGE = 10;

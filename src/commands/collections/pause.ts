@@ -1,5 +1,5 @@
-import messages from "@/constants/messages";
-import { servers } from "@/models/Server";
+import messages from "../../constants/messages";
+import { servers } from "../../models/Server";
 import { AudioPlayerStatus } from "@discordjs/voice";
 import { CommandInteraction } from "discord.js";
 
