@@ -1,4 +1,4 @@
-import messages from "@/constants/messages";
+import messages from "../constants/messages";
 import { Client } from "discord.js";
 import { deploy } from "./collections/deploy";
 import { help } from "./collections/help";

@@ -1,4 +1,4 @@
-import messages from "@/constants/messages";
+import messages from "../../constants/messages";
 import { Client, CommandInteraction } from "discord.js";
 
 export const ping = {

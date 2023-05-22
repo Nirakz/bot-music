@@ -1,5 +1,5 @@
-import messages from "@/constants/messages";
-import { servers } from "@/models/Server";
+import messages from "../../constants/messages";
+import { servers } from "../../models/Server";
 import { CommandInteraction, TextChannel } from "discord.js";
 import { pagination } from "reconlx";
 import { createQueueMessages } from "../messages/queueMessage";
