@@ -1,4 +1,4 @@
-import { scdl } from "../services/soundcloud";
+import { SoundCloud } from "scdl-core";
 import { Platform, Song } from "../types/Song";
 import {
 	AudioPlayer,
@@ -147,7 +147,7 @@ export class Server {
 						quality: "highestaudio",
 					});
 				} else {
-					stream = await scdl.download(this.playing.song.url, {
+					stream = await SoundCloud.download(this.playing.song.url, {
 						highWaterMark,
 					});
 				}

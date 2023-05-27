@@ -1,7 +1,7 @@
 import { bootstrap } from "./commands/index";
 import { config } from "dotenv";
 import { Client, Intents } from "discord.js";
-import { scdl } from "./services/soundcloud";
+import { SoundCloud } from "scdl-core";
 import express, { Request, Response } from "express";
 config();
 if (process.env.NODE_ENV === "production") {
@@ -24,7 +24,7 @@ export class BotMusic {
 		});
 
 		client.login(process.env.TOKEN).then(async () => {
-			await scdl.connect();
+			await SoundCloud.connect();
 			bootstrap(client);
 		});
 
