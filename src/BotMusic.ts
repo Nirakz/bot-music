@@ -3,6 +3,7 @@ import { config } from "dotenv";
 import { Client, Intents } from "discord.js";
 import { SoundCloud } from "scdl-core";
 import express, { Request, Response } from "express";
+import herokuAwake from 'heroku-awake';
 config();
 if (process.env.NODE_ENV === "production") {
 	require("module-alias/register");
@@ -38,6 +39,7 @@ export class BotMusic {
 
 		app.listen(process.env.PORT || 3000, () => {
 			console.log(`> Bot is on listening`);
+			herokuAwake(process.env.APP_URL || 'http://localhost:3000');
 		});
 	}
 }
