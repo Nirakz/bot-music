@@ -3,8 +3,6 @@ import { Playlist } from "../types/Playlist";
 import { Platform, Song } from "../types/Song";
 import { SoundCloud } from "scdl-core";
 
-export const scdl = new SoundCloud();
-
 export class SoundCloudService {
 	public static async getTrackDetails(content: string): Promise<Song> {
 		let url = "";
@@ -15,7 +13,7 @@ export class SoundCloudService {
 			url = paths[0];
 		}
 		if (!url) throw new Error();
-		const track = await scdl.tracks.getTrack(url);
+		const track = await SoundCloud.tracks.getTrack(url);
 		if (track)
 			return {
 				title: track.title,
@@ -29,7 +27,7 @@ export class SoundCloudService {
 	}
 
 	public static async getPlaylist(url: string): Promise<Playlist> {
-		const playlist = await scdl.playlists.getPlaylist(url);
+		const playlist = await SoundCloud.playlists.getPlaylist(url);
 		if (!playlist) if (!url) throw new Error();
 		const songs: Song[] = [];
 		playlist.tracks.forEach((track) => {
@@ -58,7 +56,7 @@ export class SoundCloudService {
 	}
 
 	private static async searchTrack(keyword: string): Promise<string> {
-		const res = await scdl.search({
+		const res = await SoundCloud.search({
 			query: keyword,
 			filter: "tracks",
 		});
