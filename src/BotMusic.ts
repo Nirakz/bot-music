@@ -35,7 +35,7 @@ export class BotMusic {
 				message: "Bot is running",
 			});
 		});
-
+		
 		app.listen(process.env.PORT || 3000, () => {
 			console.log(`> Bot is on listening`);
 		});
