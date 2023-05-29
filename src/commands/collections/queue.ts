@@ -1,8 +1,8 @@
 import messages from "../../constants/messages";
 import { servers } from "../../models/Server";
-import { CommandInteraction, TextChannel } from "discord.js";
-import { pagination } from "reconlx";
-import { createQueueMessages } from "../messages/queueMessage";
+import { CommandInteraction } from "discord.js";
+// import { pagination } from "reconlx";
+// import { createQueueMessages } from "../messages/queueMessage";
 
 export const queue = {
 	name: "queue",
@@ -18,16 +18,16 @@ export const queue = {
 			return;
 		}
 
-		const embedMessages = createQueueMessages(server.queue);
+		// const embedBuilder = createQueueMessages(server.queue);
 		await interaction.editReply(messages.yourQueue);
 
-		if (interaction && interaction.channel && interaction.channel instanceof TextChannel) {
-			await pagination({
-				embeds: embedMessages,
-				channel: interaction.channel as TextChannel,
-				author: interaction.user,
-				fastSkip: true,
-			});
-		}
+		// if (interaction && interaction.channel && interaction.channel instanceof TextChannel) {
+		// 	await pagination({
+		// 		embeds: embedBuilder,
+		// 		channel: interaction.channel as TextChannel,
+		// 		author: interaction.user,
+		// 		fastSkip: true,
+		// 	});
+		// }
 	},
 };

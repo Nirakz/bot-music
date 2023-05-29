@@ -19,7 +19,7 @@ export default {
 	alreadyPlaying: "▶ Already playing!",
 	leaved: "👋 Bye bye",
 	nothing: "🤷‍♂️ Nothing",
-	yourQueue: "🎶 Your queue",
+	yourQueue: "🎶 Updateting...",
 	invalidPosition: "❌ Invalid position!",
 	jumpedTo: "⏩ Jumped to",
 	removed: "🗑 Removed",
