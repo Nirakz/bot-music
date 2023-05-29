@@ -2,7 +2,7 @@
 
 ## Overview
 
-bot-Music is a Discord bot that plays music in voice channel. The bot is built on Discord.js v13.
+bot-Music is a Discord bot that plays music in voice channel. The bot is built on Discord.js v14.
 
 ## Requirements
 
@@ -27,7 +27,7 @@ bot-Music is a Discord bot that plays music in voice channel. The bot is built o
 
 - Invite the bot to the server, then join a voice channel. Send `!start` to deploy the slash command for bot in the server
 
-## Deploy to Heroku
+## Deploy to Heroku (7$/months)
 
 The bot can run continuously on Heroku without sleep. You need to setup 2 `Config Vars` in your Heroku app.
 
