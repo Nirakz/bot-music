@@ -9,7 +9,7 @@ export const deploy = (client: Client): void => {
 		if (message.author.id === client.application?.owner?.id) {
 			try {
 				await message.guild.commands.set(schema);
-				await message.reply("Deployed!");
+				await message.reply("Deployed!!");
 			} catch (e) {
 				message.reply("Fail to deploy!");
 			}
