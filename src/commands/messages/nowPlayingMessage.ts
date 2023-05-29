@@ -1,7 +1,8 @@
+import { title } from "process";
 import messages from "../../constants/messages";
 import { Platform } from "../../types/Song";
 import { formatSeconds } from "../../utils/formatTime";
-import { EmbedFieldData, MessageEmbed } from "discord.js";
+import { EmbedField, EmbedBuilder } from "discord.js";
 
 export const createNowPlayingMessage = (payload: {
 	title: string;
@@ -11,21 +12,21 @@ export const createNowPlayingMessage = (payload: {
 	length: number;
 	platform: Platform;
 	requester: string;
-}): MessageEmbed => {
-	const author: EmbedFieldData = {
+}): EmbedBuilder => {
+	const author: EmbedField = {
 		name: messages.author,
 		value: payload.author,
 		inline: true,
 	};
-	const length: EmbedFieldData = {
+	const length: EmbedField = {
 		name: messages.length,
 		value: formatSeconds(payload.length),
 		inline: true,
 	};
-	return new MessageEmbed()
+	return new EmbedBuilder()
 		.setTitle(payload.title)
 		.setURL(payload.url)
-		.setAuthor(`${messages.addedToQueue} ${payload.requester}`)
+		.setAuthor({ name: `${messages.addedToQueue} ${payload.requester}` })
 		.setThumbnail(payload.thumbnail)
 		.addFields(author, length);
 };

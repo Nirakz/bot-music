@@ -6,7 +6,7 @@ export const deploy = (client: Client): void => {
 		if (!message.guild) return;
 		// Allow deployment only as server owner
 		if (!client.application?.owner) await client.application?.fetch();
-		if (message.content.toLowerCase() === "!start" && message.author.id === client.application?.owner?.id) {
+		if (message.author.id === client.application?.owner?.id) {
 			try {
 				await message.guild.commands.set(schema);
 				await message.reply("Deployed!");

@@ -1,5 +1,5 @@
 // Danh sách các slash command của bot
-import { Constants, ApplicationCommandData } from "discord.js";
+import { ApplicationCommandData, ApplicationCommandOptionType } from "discord.js";
 
 export const schema: ApplicationCommandData[] = [
 	{
@@ -8,7 +8,7 @@ export const schema: ApplicationCommandData[] = [
 		options: [
 			{
 				name: "input",
-				type: Constants.ApplicationCommandOptionTypes.STRING,
+				type: ApplicationCommandOptionType.String,
 				description: "The url or keyword to search videos or playlist on Youtube",
 				required: true,
 			},
@@ -20,7 +20,7 @@ export const schema: ApplicationCommandData[] = [
 		options: [
 			{
 				name: "input",
-				type: Constants.ApplicationCommandOptionTypes.STRING,
+				type: ApplicationCommandOptionType.String,
 				description: "The url or keyword to search videos or playlist on SoundCloud",
 				required: true,
 			},
@@ -56,7 +56,7 @@ export const schema: ApplicationCommandData[] = [
 		options: [
 			{
 				name: "position",
-				type: Constants.ApplicationCommandOptionTypes.NUMBER,
+				type: ApplicationCommandOptionType.Number,
 				description: "The position of song in queue",
 				required: true,
 			},
@@ -68,7 +68,7 @@ export const schema: ApplicationCommandData[] = [
 		options: [
 			{
 				name: "position",
-				type: Constants.ApplicationCommandOptionTypes.NUMBER,
+				type: ApplicationCommandOptionType.Number,
 				description: "The position of song in queue",
 				required: true,
 			},
