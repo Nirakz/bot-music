@@ -1,12 +1,12 @@
 import messages from "../../constants/messages";
 import { QueueItem } from "../../models/Server";
 import { formatSeconds } from "../../utils/formatTime";
-import { MessageEmbed } from "discord.js";
+import { EmbedBuilder } from "discord.js";
 
 const MAX_SONGS_PER_PAGE = 10;
 
 const generatePageMessage = (items: QueueItem[], start: number) => {
-	const embedMessage = new MessageEmbed({
+	const embedMessage = new EmbedBuilder({
 		title: messages.yourQueue,
 		fields: items.map((item, index) => ({
 			name: `${start + 1 + index}. ${item.song.title} | ${item.song.author}`,
@@ -18,7 +18,7 @@ const generatePageMessage = (items: QueueItem[], start: number) => {
 	return embedMessage;
 };
 
-export const createQueueMessages = (queue: QueueItem[]): MessageEmbed[] => {
+export const createQueueMessages = (queue: QueueItem[]): EmbedBuilder[] => {
 	if (queue.length < MAX_SONGS_PER_PAGE) {
 		const embedMessage = generatePageMessage(queue, 0);
 		return [embedMessage];

@@ -1,6 +1,6 @@
 import { bootstrap } from "./commands/index";
 import { config } from "dotenv";
-import { Client, Intents } from "discord.js";
+import { Client, GatewayIntentBits } from "discord.js";
 import { SoundCloud } from "scdl-core";
 import express, { Request, Response } from "express";
 config();
@@ -12,10 +12,14 @@ export class BotMusic {
 	static init() {
 		const client = new Client({
 			intents: [
-				Intents.FLAGS.GUILDS,
-				Intents.FLAGS.GUILD_MESSAGES,
-				Intents.FLAGS.GUILD_VOICE_STATES,
-				Intents.FLAGS.GUILD_INTEGRATIONS,
+				// Intents.FLAGS.GUILDS,
+				// Intents.FLAGS.GUILD_MESSAGES,
+				// Intents.FLAGS.GUILD_VOICE_STATES,
+				// Intents.FLAGS.GUILD_INTEGRATIONS,
+				GatewayIntentBits.Guilds,
+				GatewayIntentBits.GuildMessages,
+				GatewayIntentBits.GuildVoiceStates,
+				GatewayIntentBits.GuildIntegrations,
 			],
 		});
 
@@ -35,7 +39,7 @@ export class BotMusic {
 				message: "Bot is running",
 			});
 		});
-		
+
 		app.listen(process.env.PORT || 3000, () => {
 			console.log(`> Bot is on listening`);
 		});
