@@ -3,19 +3,15 @@
 		"require": ["tsconfig-paths/register"]
 	},
 	"compilerOptions": {
-		"module": "ESNext",
-		"newLine": "lf",
-		"outDir": "dist/",
-		"target": "ES2017",
-		"lib": ["es2020", "DOM", "DOM.Iterable"],
-		"declaration": false,
-		"sourceMap": true,
-		"noUnusedLocals": true,
-		"noImplicitReturns": true,
-		"resolveJsonModule": true,
-		"strictNullChecks": true,
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"target": "es6",
+		"noImplicitAny": true,
+		"moduleResolution": "node",
 		"strict": true,
-		"moduleResolution": "Node"
+		"sourceMap": false,
+		"outDir": "dist",
+		"baseUrl": "src",
 	},
 	"include": ["src/**/*"],
 	"exclude": ["node_modules"]
